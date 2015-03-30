@@ -19,8 +19,8 @@ function update_msg() {
   document.getElementById('hmac_sha1').innerHTML   = CryptoJS.HmacSHA1(msg, pass);
   document.getElementById('hmac_sha256').innerHTML = CryptoJS.HmacSHA256(msg, pass);
   document.getElementById('hmac_sha512').innerHTML = CryptoJS.HmacSHA512(msg, pass);
-*/
   document.getElementById('hmac_sha3').innerHTML   = CryptoJS.HmacSHA3(msg, pass);
+*/
   document.getElementById('aes').innerHTML         = CryptoJS.AES.encrypt(msg, pass);
   document.getElementById('des').innerHTML         = CryptoJS.DES.encrypt(msg, pass);
   document.getElementById('t-des').innerHTML       = CryptoJS.TripleDES.encrypt(msg, pass);
