@@ -10,7 +10,6 @@ function md5pass_update(){
 function update(){
   var stringToEncode = document.getElementById('string').value;
   document.getElementById('base64_encoded').innerHTML = window.btoa(stringToEncode);
-  document.getElementById('hexa').innerHTML   = stringToEncode.toString(CryptoJS.enc.Hex);
   document.getElementById('md5_summed').innerHTML  = CryptoJS.MD5(stringToEncode);
   document.getElementById('sha1_hash').innerHTML   = CryptoJS.SHA1(stringToEncode);
   document.getElementById('sha2_hash').innerHTML   = CryptoJS.SHA256(stringToEncode);
