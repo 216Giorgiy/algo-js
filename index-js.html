@@ -8,11 +8,11 @@
     </head>
     <body>
 
-    <form name="base64" action="javascript:void(0)">
+    <form name="encoding" action="javascript:void(0)">
       <fieldset>
         <legend>Encoding</legend>
         <label for="string">String</label>
-        <input type="text" size="32" name="string" value="" id="string" onkeyup="update();"></input>
+        <input type="text" size="32" name="string" value="" id="string" onkeyup="update_no_salt();"></input>
         <br>
         <p><strong>Base64</strong>: <span id="base64_encoded">base64</span></p>
         <p><strong>MD5</strong>: <span id="md5_summed">MD5 sum</span></p>
@@ -24,46 +24,47 @@
       </fieldset>
     </form>
 
+    <form name="messages" action="javascript:void(0)">
+      <fieldset>
+        <legend>Messages</legend>
+        <label for="msg">Message</label>
+        <input type="text" size="32" name="msg" value="" id="msg" onkeyup="update_msg();"></input>
+        <label for="pass">Passphrase</label>
+        <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();"></input>
+        <br>
+        <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
+        <p><strong>HMAC</strong>: <span id="hmac_sha1">HMAC SHA1</span></p>
+        <p><strong>HMAC</strong>: <span id="hmac_sha256">HMAC SHA256</span></p>
+        <p><strong>HMAC</strong>: <span id="hmac_sha512">HMAC SHA512</span></p>
+        <p><strong>HMAC</strong>: <span id="hmac_sha3">HMAC SHA3</span></p>
+        <p><strong>AES</strong>: <span id="aes">AES</span></p>
+      </fieldset>
+    </form>
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <form name="pass" action="javascript:void(0)">
+      <fieldset>
+        <legend>Passphrase</legend>
+        <label for="pssp">Passphrase</label>
+        <input type="text" size="32" name="pssp" value="" id="pssp" onkeyup="update_salt();"></input>
+        <label for="salt">Salt</label>
+        <input type="text" size="32" name="salt" value="" id="salt" onkeyup="update_salt();"></input>
+        <br>
+        <p><strong>PBKDF2</strong>: <span id="pbkdf">HMAC MD5</span></p>
+      </fieldset>
+    </form>
 
-
-<form name="md5pass" action="javascript:void(0)">
-  <fieldset>
-    <legend>MD5 password</legend>
-
-      <label for="salt">Salt:</label>
-      <input type="text" size="16" name="salt" value="salt" id="md5pass-salt" onkeyup=md5pass_salt_update() onLoad = md5pass_salt_update()>
-      </input>
-
-      <label for="password">Password</label>
-      <input type="text" size="32" name="password" value="my secret password" id="md5pass-pass"
-        onkeyup= "md5pass_update()">
-      </input>
-<br>
-  $1$<span id="md5salt">salt</span>$<span id="md5hash">hash</span>
-  </fieldset>
-</form>
-
-<form name="formB">
-  <!-- Event Handler Output: -->
-  <textarea name="t1" rows="8" cols="45" wrap="soft"></textarea>
-  <textarea name="t2" rows="8" cols="10" wrap="soft"></textarea>
-</form>
+    <form name="decrypt" action="javascript:void(0)">
+      <fieldset>
+        <legend>Decrypt</legend>
+        <label for="d_msg">Message</label>
+        <input type="text" size="32" name="d_msg" value="" id="d_msg" onkeyup="d_update_msg();"></input>
+        <label for="pass">Passphrase</label>
+        <input type="text" size="32" name="d_pass" value="" id="d_pass" onkeyup="d_update_msg();"></input>
+        <br>
+        <p><strong>AES</strong>: <span id="d_aes">AES</span></p>
+      </fieldset>
+    </form>
 
 </body>
 </html>
