@@ -16,8 +16,10 @@
         <br>
         <p><strong>Base64</strong>: <span id="base64_encoded">base64</span></p>
         <p><strong>MD5</strong>: <span id="md5_summed">MD5 sum</span></p>
+<!--
         <p><strong>SHA1</strong>: <span id="sha1_hash">SHA1 hash</span></p>
-        <p><strong>SHA2</strong>: <span id="sha2_hash">SHA1 hash</span></p>
+        <p><strong>SHA2</strong>: <span id="sha2_hash">SHA2 hash</span></p>
+-->
         <p><strong>SHA512</strong>: <span id="sha512_hash">SHA1 hash</span></p>
         <p><strong>SHA3</strong>: <span id="sha3_hash">SHA3 hash</span></p>
         <p><strong>RIPEMD-160</strong>: <span id="ripemd">RIPEMD hash</span></p>
@@ -32,18 +34,20 @@
         <label for="pass">Passphrase</label>
         <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();"></input>
         <br>
-        <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
+<!--        <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha1">HMAC SHA1</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha256">HMAC SHA256</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha512">HMAC SHA512</span></p>
+-->
         <p><strong>HMAC</strong>: <span id="hmac_sha3">HMAC SHA3</span></p>
         <p><strong>AES</strong>: <span id="aes">AES</span></p>
         <p><strong>DES</strong>: <span id="des">DES</span></p>
         <p><strong>T-DES</strong>: <span id="t-des">T-DES</span></p>
+        <p><strong>Rabbit</strong>: <span id="rbbt">T-DES</span></p>
+        <p><strong>RC4Drop</strong>: <span id="rc4">RC4Drop</span></p>
       </fieldset>
     </form>
-
-
+<!--
     <form name="pass" action="javascript:void(0)">
       <fieldset>
         <legend>Passphrase</legend>
@@ -55,7 +59,7 @@
         <p><strong>PBKDF2</strong>: <span id="pbkdf">HMAC MD5</span></p>
       </fieldset>
     </form>
-
+-->
     <form name="decrypt" action="javascript:void(0)">
       <fieldset>
         <legend>Decrypt</legend>
@@ -67,6 +71,8 @@
         <p><strong>AES</strong>: <span id="d_aes">AES</span></p>
         <p><strong>DES</strong>: <span id="d_des">DES</span></p>
         <p><strong>T-DES</strong>: <span id="d_t-des">T-DES</span></p>
+        <p><strong>Rabbit</strong>: <span id="d_rbbt">Rabbit</span></p>
+        <p><strong>RC4DROP</strong>: <span id="d_rc4">RC4Drop</span></p>
       </fieldset>
     </form>
 
