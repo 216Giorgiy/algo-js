@@ -1,39 +1,53 @@
 <!DOCTYPE HTML>
 <html>
-<body>
+    <head>
+      <meta name="ROBOTS" content="NOARCHIVE">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+      <script src="./algo.js"></script>
+      <script src="crypto-js.googlecode.js"></script>
+    </head>
+    <body>
 
-  <p>Header...</p>
+    <form name="base64" action="javascript:void(0)">
+      <fieldset>
+        <legend>Encoding</legend>
+        <label for="string">String</label>
+        <input type="text" size="32" name="string" value="" id="string" onkeyup="update();"></input>
+        <br>
+        <p><strong>Base64</strong>: <span id="base64_encoded">base64</span></p>
+        <p><strong>MD5</strong>: <span id="md5_summed">MD5 sum</span></p>
+        <p><strong>SHA1</strong>: <span id="sha1_hash">SHA1 hash</span></p>
+        <p><strong>SHA2</strong>: <span id="sha2_hash">SHA1 hash</span></p>
+        <p><strong>SHA512</strong>: <span id="sha512_hash">SHA1 hash</span></p>
+        <p><strong>SHA3</strong>: <span id="sha3_hash">SHA3 hash</span></p>
+        <p><strong>RIPEMD-160</strong>: <span id="ripemd">RIPEMD hash</span></p>
+      </fieldset>
+    </form>
 
-<script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-<script src="./algo.js"></script>
-<script>
-  function md5pass_salt_update(){
-    document.getElementById('md5salt').innerHTML = document.getElementById('md5pass-salt').value;
-    md5pass_update();
-  }
-  function md5pass_update(){
-    document.getElementById('md5hash').innerHTML = document.getElementById('md5pass-pass').value;
-  }
-  function handler(t,c,s)
-  {
-    t.value += s;
-    c.checked = true;
-    return 0
-  }
-  function update(){
-    var stringToEncode = document.getElementById('base64_str').value;
-    document.getElementById('base64_encoded').innerHTML = window.btoa(stringToEncode);
-    document.getElementById('md5_summed').innerHTML = CryptoJS.MD5("message");
-  }
-</script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 
 <form name="md5pass" action="javascript:void(0)">
   <fieldset>
     <legend>MD5 password</legend>
 
       <label for="salt">Salt:</label>
-      <input type="text" size="16" name="salt" value="salt" id="md5pass-salt"
-        onkeyup= "md5pass_salt_update()">
+      <input type="text" size="16" name="salt" value="salt" id="md5pass-salt" onkeyup=md5pass_salt_update() onLoad = md5pass_salt_update()>
       </input>
 
       <label for="password">Password</label>
@@ -45,22 +59,6 @@
   </fieldset>
 </form>
 
-<form name="base64" action="javascript:void(0)">
-  <fieldset>
-    <legend>Base64</legend>
-
-      <label for="base64_str">String</label>
-      <input type="text" size="32" name="base64_str" value="string to encode" id="base64_str"
-        onkeyup= "update()">
-      </input>
-<br>
-  <p id="base64_encoded">hash</p>
-  <p id="md5_summed">hash</p>
-  </fieldset>
-</form>
-
-
-  
 <form name="formB">
   <!-- Event Handler Output: -->
   <textarea name="t1" rows="8" cols="45" wrap="soft"></textarea>
