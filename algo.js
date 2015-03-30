@@ -18,6 +18,8 @@ function update_msg() {
   document.getElementById('hmac_sha512').innerHTML = CryptoJS.HmacSHA512(msg, pass);
   document.getElementById('hmac_sha3').innerHTML   = CryptoJS.HmacSHA3(msg, pass);
   document.getElementById('aes').innerHTML   = CryptoJS.AES.encrypt(msg, pass);
+  document.getElementById('des').innerHTML   = CryptoJS.DES.encrypt(msg, pass);
+  document.getElementById('t-des').innerHTML   = CryptoJS.TripleDES.encrypt(msg, pass);
 }
 
 function update_salt() {
@@ -31,5 +33,7 @@ function d_update_msg() {
   var d_msg  = document.getElementById('d_msg').value;
   var d_pass = document.getElementById('d_pass').value;
   document.getElementById('d_aes').innerHTML   = CryptoJS.AES.decrypt(d_msg, d_pass);
+  document.getElementById('d_des').innerHTML   = CryptoJS.DES.decrypt(d_msg, d_pass);
+  document.getElementById('d_t-des').innerHTML   = CryptoJS.TripleDES.decrypt(d_msg, d_pass);
 
 }
