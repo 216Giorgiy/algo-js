@@ -12,7 +12,7 @@
       <fieldset>
         <legend>Encoding</legend>
         <label for="string">String</label>
-        <input type="text" size="32" name="string" value="" id="string" onkeypress="update_no_salt();"></input>
+        <input type="text" size="32" name="string" value="" id="string" onkeyup="update_no_salt();"></input>
         <br>
         <p><strong>Base64</strong>: <span id="base64_encoded">base64</span></p>
         <p><strong>MD5</strong>: <span id="md5_summed">MD5 sum</span></p>
@@ -30,9 +30,9 @@
       <fieldset>
         <legend>Messages</legend>
         <label for="msg">Message</label>
-        <input type="text" size="32" name="msg" value="" id="msg" onkeypress="update_msg();"></input>
+        <input type="text" size="32" name="msg" value="" id="msg" onkeyup="update_msg();"></input>
         <label for="pass">Passphrase</label>
-        <input type="text" size="32" name="pass" value="" id="pass" onkeypress="update_msg();"></input>
+        <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();"></input>
         <br>
 <!--        <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha1">HMAC SHA1</span></p>
@@ -64,9 +64,9 @@
       <fieldset>
         <legend>Decrypt</legend>
         <label for="d_msg">Message</label>
-        <input type="text" size="32" name="d_msg" value="" id="d_msg" onkeypress="d_update_msg();"></input>
+        <input type="text" size="32" name="d_msg" value="" id="d_msg" onkeyup="d_update_msg();"></input>
         <label for="pass">Passphrase</label>
-        <input type="text" size="32" name="d_pass" value="" id="d_pass" onkeypress="d_update_msg();"></input>
+        <input type="text" size="32" name="d_pass" value="" id="d_pass" onkeyup="d_update_msg();"></input>
         <br>
         <p><strong>AES</strong>: <span id="d_aes">AES</span></p>
         <p><strong>DES</strong>: <span id="d_des">DES</span></p>
