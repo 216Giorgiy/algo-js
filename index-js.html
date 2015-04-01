@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
+      <title>Crypto algo</title>
       <meta name="ROBOTS" content="NOARCHIVE">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
       <link href="style.css" rel="stylesheet">
@@ -12,9 +13,10 @@
     <form name="encoding" action="javascript:void(0)">
       <fieldset>
         <legend>Encoding</legend>
-        <label for="string">String</label>
-        <input type="text" size="32" name="string" value="" id="string" onkeyup="update_no_salt();"></input>
-        <br>
+        <div class="form-group">
+          <label for="string">String</label>
+          <input type="text" size="32" name="string" value="" id="string" onkeyup="update_no_salt();"/>
+        </div>
         <p><strong>Base64</strong>: <span id="base64_encoded">base64</span></p>
         <p><strong>MD5</strong>: <span id="md5_summed">MD5 sum</span></p>
 <!--
@@ -31,9 +33,9 @@
       <fieldset>
         <legend>Messages</legend>
         <label for="msg">Message</label>
-        <textarea rows="4" cols="50" name="msg" value="" id="msg" onkeyup="update_msg();d_update_msg();">Message to encode</textarea>
+        <textarea rows="4" cols="50" name="msg" id="msg" onkeyup="update_msg();d_update_msg();">Message to encode</textarea>
         <label for="pass">Passphrase</label>
-        <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();d_update_msg();"></input>
+        <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();d_update_msg();"/>
         <br>
 <!--
         <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
