@@ -10,42 +10,38 @@
     </head>
     <body>
 
-    <form name="encoding" action="javascript:void(0)">
+    <form name="encoding" action="javascript:void(0)" class="alert alert-warning">
       <fieldset>
         <legend>Encoding</legend>
         <div class="form-group">
           <label for="string">String</label>
-          <input type="text" class="form-control" name="string" id="string" onkeyup="update_no_salt();"/>
+          <input type="text" autofocus class="form-control" name="string" id="string" onkeyup="update_no_salt();"/>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid alert alert-info">
           <div class="row">
-            <div class="col-xs-12 col-md-4">
-              <p><strong>MD5</strong>: <span class="label label-info" id="md5_summed">MD5 sum</span></p>
+            <div class="col-xs-12 col-md-9 form-inline form-group">
+                  <label for="md5_summed">MD5</label>
+                  <textarea class="form-control" cols="45" rows="1" name="md5_summed" id="md5_summed">MD5 summed</textarea>
+                  <label for="md5_summed">RIPEMD-160</label>
+                  <textarea class="form-control" cols="55" rows="1" name="ripemd" id="ripemd">RIPEMD hash</textarea><br><br>
+                  <label for="sha512_hash">SHA512</label>
+                  <textarea class="form-control" cols="170" rows="1" name="sha512_hash" id="sha512_hash">SHA512 hash</textarea><br><br>
+                  <label for="sha3_hash">SHA3</label>
+                  <textarea class="form-control" cols="170" rows="1" name="sha3_hash" id="sha3_hash">SHA3 hash</textarea>
             </div>
-            <div class="col-xs-12 col-md-4">
-              <p><strong>RIPEMD-160</strong>: <span class="label label-info" id="ripemd">RIPEMD hash</span></p>
+            <div class="col-xs-12 col-md-3">
+              <div class="form-group">
+                  <label for="base64_encoded">Base64</label>
+                  <textarea class="form-control" rows="5" name="base64_encoded" id="base64_encoded">Base64 encoded</textarea>
+              </div>
             </div>
-            <div class="col-xs-12 col-md-4">
-              <p><strong>Base64</strong>: <span class="label label-info" id="base64_encoded">base64</span></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-md-12">
-              <p><strong>SHA512</strong>: <span class="label label-info" id="sha512_hash">SHA1 hash</span></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-md-12">
-              <p><strong>SHA3</strong>: <span class="label label-info" id="sha3_hash">SHA3 hash</span></p>
-            </div>
-          </div>
         </div>
       </fieldset>
     </form>
 
-    <form name="encryption" action="javascript:void(0)">
+    <form name="encryption" action="javascript:void(0)" class="alert alert-warning">
       <fieldset>
-        <legend>Messages</legend>
+        <legend>Encryption</legend>
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-md-8">
@@ -61,20 +57,54 @@
               </div>
             </div>
           </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-8 alert alert-success">
+            <h4 class="text-center"><span class="label label-success">Encrypt</span></h4><hr>
+            <div class="form-group">
+                <label for="aes">AES</label>
+                <textarea class="form-control" rows="1" name="aes" id="aes">AES encrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="des">DES</label>
+                <textarea class="form-control" rows="1" name="des" id="des">DES encrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="t-des">T-DES</label>
+                <textarea class="form-control" rows="1" name="t-des" id="t-des">Triple DES encrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="rbbt">Rabbit</label>
+                <textarea class="form-control" rows="1" name="rbbt" id="rbbt">Rabbit encrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="rc4">RC4Drop</label>
+                <textarea class="form-control" rows="1" name="rc4" id="rc4">RC4Drop encrypted</textarea>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4 alert alert-danger">
+            <h4 class="text-center"><span class="label label-danger">Decrypt</span></h4><hr>
+            <div class="form-group">
+                <label for="d_aes">AES</label>
+                <textarea class="form-control" rows="1" name="d_aes" id="d_aes">AES decrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="d_des">DES</label>
+                <textarea class="form-control" rows="1" name="d_des" id="d_des">DES decrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="d_t-des">T-DES</label>
+                <textarea class="form-control" rows="1" name="d_t-des" id="d_t-des">Triple DES decrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="d_rbbt">Rabbit</label>
+                <textarea class="form-control" rows="1" name="d_rbbt" id="d_rbbt">Rabbit decrypted</textarea>
+            </div>
+            <div class="form-group">
+                <label for="d_rc4">RC4DROP</label>
+                <textarea class="form-control" rows="1" name="d_rc4" id="d_rc4">RC4Drop decrypted</textarea>
+            </div>
+          </div>
         </div>
-        <h3>Encrypt</h3><hr>
-        <p><strong>AES</strong>: <span id="aes">AES</span></p>
-        <p><strong>DES</strong>: <span id="des">DES</span></p>
-        <p><strong>T-DES</strong>: <span id="t-des">T-DES</span></p>
-        <p><strong>Rabbit</strong>: <span id="rbbt">T-DES</span></p>
-        <p><strong>RC4Drop</strong>: <span id="rc4">RC4Drop</span></p>
-
-        <h3>Decrypt</h3><hr>
-        <p><strong>AES</strong>: <span id="d_aes">AES</span></p>
-        <p><strong>DES</strong>: <span id="d_des">DES</span></p>
-        <p><strong>T-DES</strong>: <span id="d_t-des">T-DES</span></p>
-        <p><strong>Rabbit</strong>: <span id="d_rbbt">Rabbit</span></p>
-        <p><strong>RC4DROP</strong>: <span id="d_rc4">RC4Drop</span></p>
       </fieldset>
     </form>
 <!--
