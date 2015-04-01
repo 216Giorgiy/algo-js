@@ -15,28 +15,58 @@
         <legend>Encoding</legend>
         <div class="form-group">
           <label for="string">String</label>
-          <input type="text" size="32" name="string" value="" id="string" onkeyup="update_no_salt();"/>
+          <input type="text" class="form-control" name="string" id="string" onkeyup="update_no_salt();"/>
         </div>
-        <p><strong>Base64</strong>: <span id="base64_encoded">base64</span></p>
-        <p><strong>MD5</strong>: <span id="md5_summed">MD5 sum</span></p>
+        <div class="container-fluid">
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <p><strong>MD5</strong>: <span class="label label-info" id="md5_summed">MD5 sum</span></p>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <p><strong>RIPEMD-160</strong>: <span class="label label-info" id="ripemd">RIPEMD hash</span></p>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <p><strong>Base64</strong>: <span class="label label-info" id="base64_encoded">base64</span></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <p><strong>SHA512</strong>: <span class="label label-info" id="sha512_hash">SHA1 hash</span></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <p><strong>SHA3</strong>: <span class="label label-info" id="sha3_hash">SHA3 hash</span></p>
+            </div>
+          </div>
+          </div>
+        </div>
 <!--
         <p><strong>SHA1</strong>: <span id="sha1_hash">SHA1 hash</span></p>
         <p><strong>SHA2</strong>: <span id="sha2_hash">SHA2 hash</span></p>
 -->
-        <p><strong>SHA512</strong>: <span id="sha512_hash">SHA1 hash</span></p>
-        <p><strong>SHA3</strong>: <span id="sha3_hash">SHA3 hash</span></p>
-        <p><strong>RIPEMD-160</strong>: <span id="ripemd">RIPEMD hash</span></p>
       </fieldset>
     </form>
 
     <form name="encryption" action="javascript:void(0)">
       <fieldset>
         <legend>Messages</legend>
-        <label for="msg">Message</label>
-        <textarea rows="4" cols="50" name="msg" id="msg" onkeyup="update_msg();d_update_msg();">Message to encode</textarea>
-        <label for="pass">Passphrase</label>
-        <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();d_update_msg();"/>
-        <br>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-md-8">
+              <div class="form-group">
+                <label for="msg">Message</label>
+                <textarea rows="4" class="form-control" name="msg" id="msg" onkeyup="update_msg();d_update_msg();">Message to encode</textarea>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <div class="form-group">
+                <label for="pass">Passphrase</label>
+                <textarea type="text" class="form-control" rows="4" name="pass" value="" id="pass" onkeyup="update_msg();d_update_msg();">Passphrase</textarea>
+              </div>
+            </div>
+          </div>
 <!--
         <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha1">HMAC SHA1</span></p>
