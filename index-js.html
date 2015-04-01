@@ -26,15 +26,16 @@
       </fieldset>
     </form>
 
-    <form name="messages" action="javascript:void(0)">
+    <form name="encryption" action="javascript:void(0)">
       <fieldset>
         <legend>Messages</legend>
         <label for="msg">Message</label>
-        <input type="text" size="32" name="msg" value="" id="msg" onkeyup="update_msg();"></input>
+        <textarea rows="4" cols="50" name="msg" value="" id="msg" onkeyup="update_msg();d_update_msg();">Message to encode</textarea>
         <label for="pass">Passphrase</label>
-        <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();"></input>
+        <input type="text" size="32" name="pass" value="" id="pass" onkeyup="update_msg();d_update_msg();"></input>
         <br>
-<!--        <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
+<!--
+        <p><strong>HMAC</strong>: <span id="hmac_md5">HMAC MD5</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha1">HMAC SHA1</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha256">HMAC SHA256</span></p>
         <p><strong>HMAC</strong>: <span id="hmac_sha512">HMAC SHA512</span></p>
@@ -45,6 +46,14 @@
         <p><strong>T-DES</strong>: <span id="t-des">T-DES</span></p>
         <p><strong>Rabbit</strong>: <span id="rbbt">T-DES</span></p>
         <p><strong>RC4Drop</strong>: <span id="rc4">RC4Drop</span></p>
+      </fieldset>
+      <fieldset>
+        <legend>Decrypt</legend>
+        <p><strong>AES</strong>: <span id="d_aes">AES</span></p>
+        <p><strong>DES</strong>: <span id="d_des">DES</span></p>
+        <p><strong>T-DES</strong>: <span id="d_t-des">T-DES</span></p>
+        <p><strong>Rabbit</strong>: <span id="d_rbbt">Rabbit</span></p>
+        <p><strong>RC4DROP</strong>: <span id="d_rc4">RC4Drop</span></p>
       </fieldset>
     </form>
 <!--
@@ -60,21 +69,5 @@
       </fieldset>
     </form>
 -->
-    <form name="decrypt" action="javascript:void(0)">
-      <fieldset>
-        <legend>Decrypt</legend>
-        <label for="d_msg">Message</label>
-        <input type="text" size="32" name="d_msg" value="" id="d_msg" onkeyup="d_update_msg();"></input>
-        <label for="pass">Passphrase</label>
-        <input type="text" size="32" name="d_pass" value="" id="d_pass" onkeyup="d_update_msg();"></input>
-        <br>
-        <p><strong>AES</strong>: <span id="d_aes">AES</span></p>
-        <p><strong>DES</strong>: <span id="d_des">DES</span></p>
-        <p><strong>T-DES</strong>: <span id="d_t-des">T-DES</span></p>
-        <p><strong>Rabbit</strong>: <span id="d_rbbt">Rabbit</span></p>
-        <p><strong>RC4DROP</strong>: <span id="d_rc4">RC4Drop</span></p>
-      </fieldset>
-    </form>
-
 </body>
 </html>
